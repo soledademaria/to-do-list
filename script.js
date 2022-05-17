@@ -39,6 +39,34 @@ const handleInputChange = () => {
     if (inputValid) {
       return inputElement.classList.remove("error");
     }
-  };
+};
+
+const handleClick = (taskContent) => {
+    const tasks = tasksContainer.childNodes;
+
+    for(const task of tasks){
+        if(task.firstChild.isSameNode(taskContent)){
+            task.firstChild.classList.toggle('completed');
+        }
+    }
+}
+
+const handleDelete = (taskItemContainer, taskContent) => {
+    const tasks = tasksContainer.childNodes;
+
+    for(const task of tasks){
+        if(task.firstChild.isSameNode(taskContent)){
+            taskItemContainer.remove();
+        }
+    }
+
+}
+
+
+addTaskButton.addEventListener("click", () => handleAddTask());
+inputElement.addEventListener("change", () => handleInputChange())
+
+
+
   
   
