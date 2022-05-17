@@ -31,6 +31,14 @@ const handleAddTask = () => {
     tasksContainer.appendChild(taskItemContainer);
   
     inputElement.value = "";
+};
+
+const handleInputChange = () => {
+    const inputValid = validateInput();
+  
+    if (inputValid) {
+      return inputElement.classList.remove("error");
+    }
   };
   
- 
+  
